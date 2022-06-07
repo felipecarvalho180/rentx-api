@@ -1,15 +1,23 @@
-import { Category } from "../models/Category";
+import { Category } from "../../models/Category";
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from "../ICategoriesRepository";
 
-interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
-
-class CategoryRepository {
+class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
-  constructor() {
+  private static INSTANCE: CategoriesRepository;
+
+  private constructor() {
     this.categories = [];
+  }
+
+  public static getInstance() {
+    if (!CategoriesRepository.INSTANCE)
+      return (CategoriesRepository.INSTANCE = new CategoriesRepository());
+
+    return CategoriesRepository.INSTANCE;
   }
 
   findByName(name: string): Category {
@@ -36,4 +44,4 @@ class CategoryRepository {
   }
 }
 
-export { CategoryRepository };
+export { CategoriesRepository };
