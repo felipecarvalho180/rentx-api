@@ -9,11 +9,7 @@ class CreateSpecificationController {
       CreateSpecificationUseCase,
     );
 
-    try {
-      await createSpecificationUseCase.execute({ name, description });
-    } catch (e) {
-      return response.status(409).json({ error: e.message });
-    }
+    await createSpecificationUseCase.execute({ name, description });
 
     return response.status(201).send();
   }

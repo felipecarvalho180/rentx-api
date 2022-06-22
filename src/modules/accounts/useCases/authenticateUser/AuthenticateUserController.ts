@@ -9,14 +9,10 @@ class AuthenticateUserController {
     const authenticateUserUseCase = container.resolve(AuthenticateUserUseCase);
 
     let authenticateInfo;
-    try {
-      authenticateInfo = await authenticateUserUseCase.execute({
-        email,
-        password,
-      });
-    } catch (e) {
-      return response.status(409).json({ error: e.message });
-    }
+    authenticateInfo = await authenticateUserUseCase.execute({
+      email,
+      password,
+    });
 
     return response.status(200).json(authenticateInfo);
   }
