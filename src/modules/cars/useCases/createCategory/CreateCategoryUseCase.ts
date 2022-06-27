@@ -1,7 +1,7 @@
-import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../../errors/AppError";
+import { inject, injectable } from 'tsyringe';
 
-import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
+import { AppError } from '@errors/AppError';
+import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
 
 interface IRequest {
   name: string;
@@ -11,7 +11,7 @@ interface IRequest {
 @injectable()
 class CreateCategoryUseCase {
   constructor(
-    @inject("CategoriesRepository")
+    @inject('CategoriesRepository')
     private categoriesRepository: ICategoriesRepository,
   ) {}
 
@@ -21,7 +21,7 @@ class CreateCategoryUseCase {
     );
 
     if (categoryAlreadyExists)
-      throw new AppError("Category Already exists!", 409);
+      throw new AppError('Category Already exists!', 409);
 
     this.categoriesRepository.create({ name, description });
   }
