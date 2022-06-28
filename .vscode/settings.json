@@ -1,5 +1,37 @@
 {
   "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "javascript.format.insertSpaceAfterConstructor": true
+  "editor.tabSize": 2,
+  "html.format.wrapLineLength": 80,
+  "html.format.wrapAttributes": "force-aligned",
+  "editor.wordWrap": "bounded",
+  "window.zoomLevel": -1,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "dart.openDevTools": "flutter",
+  "workbench.iconTheme": "material-icon-theme",
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "editor.formatOnSave": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "editor.formatOnSave": true,
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
